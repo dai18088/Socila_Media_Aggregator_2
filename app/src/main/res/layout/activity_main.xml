@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+     <FrameLayout
+         android:id="@+id/content_frame"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent" />
+
+
+     <com.facebook.login.widget.LoginButton
+         android:id="@+id/login_button_facebook"
+         android:layout_width="339dp"
+         android:layout_height="30dp"
+         android:layout_gravity="center_horizontal"
+         android:layout_marginStart="2dp"
+         android:layout_marginEnd="8dp"
+         android:layout_marginBottom="16dp"
+         app:layout_constraintBottom_toTopOf="@+id/instagram_sign_in_button"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintHorizontal_bias="0.6"
+         app:layout_constraintStart_toStartOf="parent" />
+
+     <ImageView
+         android:id="@+id/imageView3"
+         android:layout_width="32dp"
+         android:layout_height="34dp"
+         android:layout_marginStart="32dp"
+         android:layout_marginEnd="5dp"
+         android:layout_marginBottom="98dp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toStartOf="@+id/instagram_sign_in_button"
+         app:layout_constraintStart_toStartOf="parent"
+         app:srcCompat="@drawable/instagram_1581266_1920" />
+
+     <Button
+         android:id="@+id/instagram_sign_in_button"
+         android:layout_width="310dp"
+         android:layout_height="30dp"
+         android:layout_marginEnd="22dp"
+         android:layout_marginBottom="100dp"
+         android:background="#C63063"
+         android:text="Continue with Instagram"
+         android:textColor="#F8E009"
+         android:textSize="18sp"
+         app:layout_constraintBottom_toBottomOf="parent"
+         app:layout_constraintEnd_toEndOf="parent" />
+
+
+     <com.facebook.share.widget.ShareButton
+         android:id="@+id/share_photo"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="8dp"
+         android:layout_marginEnd="8dp"
+         android:layout_marginBottom="24dp"
+         android:text="Share Photo"
+         app:layout_constraintBottom_toTopOf="@+id/login_button_facebook"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent" />
+
+     <com.facebook.share.widget.ShareButton
+         android:id="@+id/share_Link"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginStart="8dp"
+         android:layout_marginEnd="8dp"
+         android:layout_marginBottom="32dp"
+         android:text="Share Link"
+         app:layout_constraintBottom_toTopOf="@+id/share_photo"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+     <ImageView
+         android:id="@+id/iv_pic"
+         android:layout_width="194dp"
+         android:layout_height="137dp"
+         android:layout_marginTop="65dp"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toTopOf="parent"
+         tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
