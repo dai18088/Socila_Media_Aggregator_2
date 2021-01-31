@@ -9,6 +9,8 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.SharedPreferences;
+import android.provider.MediaStore;
+import android.provider.SyncStateContract;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +40,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONObject;
 
+import java.io.FileNotFoundException;
 import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
@@ -55,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
 
     //Instagram Login
     private Button InstagramSignInButton;
+
+    private Button uploadButton;
+    private Uri targetUri=null;
 
 
     //Twitter
@@ -113,6 +119,48 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+        //Instragram Post
+        uploadButton = findViewById(R.id.uploadButton);
+        uploadButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent intent = getPackageManager().getLaunchIntentForPackage("com.instagram.android");
+                if (intent != null)
+                {
+                    Intent shareIntent = new Intent();
+                    shareIntent.setAction(Intent.ACTION_SEND);
+                    shareIntent.setPackage("com.instagram.android");
+                    try {
+                        shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.parse(MediaStore.Images.Media.insertImage(getContentResolver(), "https://drive.google.com/drive/u/0/my-drive", "I am Happy", "Share happy !")));
+                    } catch (FileNotFoundException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                    shareIntent.setType("image/jpg");
+
+                    startActivity(shareIntent);
+                }
+                else
+                {
+                    // bring user to the market to download the app.
+                    // or let them choose an app?
+                    intent = new Intent(Intent.ACTION_VIEW);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.setData(Uri.parse("market://details?id="+"com.instagram.android"));
+                    startActivity(intent);
+                }
+
+            }
+
+        });
+        //Instragram Post
+
+
+
+
+
 
         //Twitter
         pref = getPreferences(0);
@@ -139,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
         callbackManagerFacabook.onActivityResult(requestCode, resultCode, data);
 
         //Share in Facebook
-        ShareLinkContent shareLinkContent=new ShareLinkContent.Builder().setContentUrl(Uri.parse("https://www.youtube.com/watch?v=rgsKm8Ib8No")).setShareHashtag(new ShareHashtag.Builder().setHashtag("#Witt").build()).build();
+        ShareLinkContent shareLinkContent=new ShareLinkContent.Builder().setContentUrl(Uri.parse("https://www.youtube.com/watch?v=rgsKm8Ib8No")).setShareHashtag(new ShareHashtag.Builder().setHashtag("#Android_Studio").build()).build();
 
         share_Link_Facebook.setShareContent(shareLinkContent);
 
@@ -221,6 +269,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Instagram Login
+
+
+
+
 
 
 

@@ -20,10 +20,10 @@
          android:layout_gravity="center_horizontal"
          android:layout_marginStart="2dp"
          android:layout_marginEnd="8dp"
-         android:layout_marginBottom="16dp"
-         app:layout_constraintBottom_toTopOf="@+id/instagram_sign_in_button"
+         android:layout_marginBottom="8dp"
+         app:layout_constraintBottom_toTopOf="@+id/uploadButton"
          app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintHorizontal_bias="0.6"
+         app:layout_constraintHorizontal_bias="0.564"
          app:layout_constraintStart_toStartOf="parent" />
 
      <ImageView
@@ -77,21 +77,27 @@
          app:layout_constraintStart_toStartOf="parent" />
 
 
-
-
      <ImageView
          android:id="@+id/iv_pic"
          android:layout_width="194dp"
          android:layout_height="137dp"
-         android:layout_marginTop="65dp"
+         android:layout_marginTop="50dp"
          app:layout_constraintEnd_toEndOf="parent"
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintTop_toTopOf="parent"
          tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-
-
-
+     <Button
+         android:id="@+id/uploadButton"
+         android:layout_width="337dp"
+         android:layout_height="31dp"
+         android:layout_marginBottom="8dp"
+         android:background="#C63063"
+         android:text="Instagram Post"
+         android:textColor="#F8E009"
+         app:layout_constraintBottom_toTopOf="@+id/instagram_sign_in_button"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,6 +33,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 public class ProfileFragment extends Fragment {
     TextView prof_name;
     SharedPreferences pref;
@@ -123,7 +124,7 @@ public class ProfileFragment extends Fragment {
             Twitter twitter = new TwitterFactory(builder.build()).getInstance(accessToken);
 
             try {
-                twitter4j.Status response = twitter.updateStatus(tweetText +" @learn2crack ");
+                twitter4j.Status response = twitter.updateStatus(tweetText +" @Marios ");
                 return response.toString();
             } catch (TwitterException e) {
                 // TODO Auto-generated catch block
@@ -146,6 +147,11 @@ public class ProfileFragment extends Fragment {
 
         }
     }
+
+
+
+
+
     private class LoadProfile extends AsyncTask<String, String, Bitmap> {
         @Override
         protected void onPreExecute() {
