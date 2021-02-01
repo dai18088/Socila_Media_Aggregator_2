@@ -4,4 +4,18 @@
     <string name="facebook_app_id">743895732890434</string>
     <string name="fb_login_protocol_scheme">fb743895732890434</string>
 
+
+    <string-array name="Top_10_Hashtags">
+        <item>#budget2021</item>
+        <item>#deprem</item>
+        <item>#Happybirthdayharry</item>
+        <item>#Elon</item>
+        <item>#Myanmar</item>
+        <item>#Happy New Month</item>
+        <item>#BBB21</item>
+        <item>#Pazartesi</item>
+        <item>#Karol</item>
+        <item>#東京393人</item>
+    </string-array>
+
 </resources>

@@ -7,11 +7,25 @@
     tools:context=".MainActivity">
 
 
+     <Button
+         android:id="@+id/Hashtag_Button"
+         android:layout_width="342dp"
+         android:layout_height="28dp"
+         android:layout_marginBottom="12dp"
+         android:background="#159E1B"
+         android:text="Trending Hashtag"
+         app:layout_constraintBottom_toTopOf="@+id/login_button_facebook"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent" />
+
      <FrameLayout
          android:id="@+id/content_frame"
          android:layout_width="match_parent"
-         android:layout_height="match_parent" />
+         android:layout_height="match_parent"
+         tools:layout_editor_absoluteX="-16dp"
+         tools:layout_editor_absoluteY="16dp">
 
+     </FrameLayout>
 
      <com.facebook.login.widget.LoginButton
          android:id="@+id/login_button_facebook"
@@ -58,7 +72,7 @@
          android:layout_height="wrap_content"
          android:layout_marginStart="8dp"
          android:layout_marginEnd="8dp"
-         android:layout_marginBottom="24dp"
+         android:layout_marginBottom="55dp"
          android:text="Share Photo"
          app:layout_constraintBottom_toTopOf="@+id/login_button_facebook"
          app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +84,7 @@
          android:layout_height="wrap_content"
          android:layout_marginStart="8dp"
          android:layout_marginEnd="8dp"
-         android:layout_marginBottom="32dp"
+         android:layout_marginBottom="16dp"
          android:text="Share Link"
          app:layout_constraintBottom_toTopOf="@+id/share_photo"
          app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +95,7 @@
          android:id="@+id/iv_pic"
          android:layout_width="194dp"
          android:layout_height="137dp"
-         android:layout_marginTop="50dp"
+         android:layout_marginTop="20dp"
          app:layout_constraintEnd_toEndOf="parent"
          app:layout_constraintStart_toStartOf="parent"
          app:layout_constraintTop_toTopOf="parent"

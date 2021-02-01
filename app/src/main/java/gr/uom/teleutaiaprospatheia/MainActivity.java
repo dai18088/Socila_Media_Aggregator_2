@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     //Instagram Login
     private Button InstagramSignInButton;
 
+    //Share in Instagram
     private Button uploadButton;
     private Uri targetUri=null;
 
@@ -69,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
     private static String CONSUMER_SECRET = "luv8WEvi5fCczinvqWSKSsXD7kkbc4IsKrmwkhvYtnSE7G59ck";
 
 
+    //Hashtag
+    private Button Hashtag_Button;
+
+
     private static final String TAG="Facebook";
 
 
@@ -76,6 +81,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Hashtag
+        Hashtag_Button=findViewById(R.id.Hashtag_Button);
+
+        Hashtag_Button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openTrendingHashtag();
+            }
+        });
+        //Hashtag
+
+
 
         //Facebook Login
         loginButtonFacebook =findViewById(R.id.login_button_facebook);
@@ -269,6 +287,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Instagram Login
+
+
+
+    //Hashtag
+    public void openTrendingHashtag(){
+        Intent intent=new Intent(this,TrendingHashtags.class);
+        startActivity(intent);
+    }
+    //Hashtag
+
 
 
 
